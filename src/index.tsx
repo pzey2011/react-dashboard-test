@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import './Assets/Styles/reset.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min';
+import './Assets/Styles/index.css';
+import App from './Views/App';
+import BookMain from './Views/Book/BookMain';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <Router>
+          <Switch>
+              <Route path="/book">
+                  <BookMain lang='fa' />
+              </Route>
+              <Route path="/">
+                  <App />
+              </Route>
+          </Switch>
+
+      </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -13,6 +13,7 @@
     "@types/react-router-dom": "^5.1.6",
     "bootstrap": "^4.5.2",
     "csstype": "^3.0.3",
+    "install-peerdeps": "^2.0.3",
     "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
@@ -46,12 +47,16 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.4.0",
     "@typescript-eslint/parser": "^4.4.0",
-    "eslint": "^7.11.0",
+    "eslint": "6.6.0",
+    "eslint-config-airbnb": "18.2.0",
     "eslint-config-airbnb-typescript": "^11.0.0",
     "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "2.21.2",
     "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-jsx-a11y": "6.3.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.4",
+    "eslint-plugin-react-hooks": "4.0.0",
     "prettier": "^2.1.2"
   }
 }

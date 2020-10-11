@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'iranyekan-bold';
+  font-style: normal;
+  font-weight: bold;
+  src: url("./../Fonts/iranyekanwebbold.eot");
+  src: url("./../Fonts/iranyekanwebbold.eot?#iefix") format("embedded-opentype"), url("./../Fonts/iranyekanwebbold.woff2") format("woff2"), url("./../Fonts/iranyekanwebbold.woff") format("woff"), url("./../Fonts/iranyekanwebbold.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: 'iranyekan-light';
+  font-style: normal;
+  font-weight: 300;
+  src: url("./../Fonts/iranyekanweblight.eot");
+  src: url("./../Fonts/iranyekanweblight.eot?#iefix") format("embedded-opentype"), url("./../Fonts/iranyekanweblight.woff2") format("woff2"), url("./../Fonts/iranyekanweblight.woff") format("woff"), url("./../Fonts/iranyekanweblight.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: 'iranyekan';
+  font-style: normal;
+  font-weight: normal;
+  src: url("./../Fonts/iranyekanwebregular.eot");
+  src: url("./../Fonts/iranyekanwebregular.eot?#iefix") format("embedded-opentype"), url("./../Fonts/iranyekanwebregular.woff2") format("woff2"), url("./../Fonts/iranyekanwebregular.woff") format("woff"), url("./../Fonts/iranyekanwebregular.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: 'iransans';
+  font-style: normal;
+  font-weight: normal;
+  src: url("./../Fonts/iransans/eot/IRANSansWeb.eot");
+  src: url("./../Fonts/iransans/eot/IRANSansWeb.eot?#iefix") format("embedded-opentype"), url("./../Fonts/iransans/woff2/IRANSansWeb.woff2") format("woff2"), url("./../Fonts/iransans/woff/IRANSansWeb.woff") format("woff"), url("./../Fonts/iransans/ttf/IRANSansWeb.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: 'iransans-bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url("./../Fonts/iransans/eot/IRANSansWeb_Bold.eot");
+  src: url("./../Fonts/iransans/eot/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"), url("./../Fonts/iransans/woff2/IRANSansWeb_Bold.woff2") format("woff2"), url("./../Fonts/iransans/woff/IRANSansWeb_Bold.woff") format("woff"), url("./../Fonts/iransans/ttf/IRANSansWeb_Bold.ttf") format("truetype")
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #818a95;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+img {
+  height: auto;
+  max-width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+.center {
+  text-align: center;
+}
+.rtl{
+  text-align: right !important;
+  direction: rtl;
+  font-family: "iranyekan-light" !important;
+}
+.rtl h1,h2,h3,h4,h5,h6,p{
+  direction: rtl;
+
+}
