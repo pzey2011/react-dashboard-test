@@ -52,6 +52,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a {
+  color: #455a64;
+}
+a:active, a:focus, a:hover {
+  outline: 0;
+  text-decoration: none;
+  color: #2962FF;
+}
+.float-left {
+  float: left !important;
+}
 img {
   height: auto;
   max-width: 100%;
@@ -69,4 +80,26 @@ img {
 .rtl h1,h2,h3,h4,h5,h6,p{
   direction: rtl;
 
+}
+.rtl ul{
+  padding-right: 0px;
+  -webkit-padding-start: 0px;
+}
+.rtl .pull-left, .rtl .float-left, .rtl .left-float {
+  float: right !important;
+}
+[data-overlay="3"]::before {
+  opacity: 0.3;
+}
+[data-overlay]::before, [data-overlay-light]::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #191919;
+  z-index: -1;
+  border-radius: inherit;
+  display: block;
 }

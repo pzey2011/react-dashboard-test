@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../../Assets/Styles/Views/Book/BookMain.scss';
+import { Navbar } from '../../Components/Navbar/Navbar';
 interface PropsType {
     lang: string
 }
@@ -8,11 +9,12 @@ interface State{
 }
 export default class BookMain extends Component<PropsType, State>{
     render() {
-        let dir:string = "";
+        let dir = "";
         if(this.props.lang=='fa')
             dir = 'rtl';
         return (
             <>
+                <Navbar lang='fa' />
                 <div className={"main "+dir} >
                     <div className="container">
                         <div className="wrapper field-types">
