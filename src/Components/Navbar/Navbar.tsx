@@ -18,26 +18,17 @@ import logo from '../../Assets/Images/Components/NavBar/logo.png';
 interface Props {
     lang: string
 }
-
 export const Navbar = (props: Props) => {
+    const [collapse, toggle] = React.useState(false); 
+    
+    const toggleCollapse = () => {
+        toggle(!collapse);
+    };
     let dir = "";
-        if(props.lang=='fa')
-            dir = 'rtl';
-        let mainStyles: React.CSSProperties = { };
-        if(props.lang=='fa')
-        {
-            dir = 'rtl';
-            mainStyles = {
-                direction:'rtl'
-            }
-        }
-        else{
-            mainStyles = {
-                direction:'ltr'
-            }
-        }
+    if(props.lang=='fa')
+        dir = 'rtl';
     return (
-        <div className={dir}>
+        <div className={dir+' '+((collapse)?'sidebar-collapse':'')}>
             <header className="main-header">
                 <a href="https://www.kadro.co" className="logo d-none d-md-block" >
                     {/*<!-- logo-->*/}
@@ -50,7 +41,7 @@ export const Navbar = (props: Props) => {
                 </a>
                 <nav className="navbar">
                     <div className="menu-button">
-                        <a id="scroll-to-top" className="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <a id="scroll-to-top" className="sidebar-toggle" data-toggle="push-menu" role="button" onClick={toggleCollapse}>
                             <FontAwesomeIcon
                                 icon={ faBars}
                                 fixedWidth

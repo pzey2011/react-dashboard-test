@@ -91,7 +91,6 @@ $breakpoints: (phone: 640px,
         .dark-logo{
           display: block;
           width: 54px;
-          padding-right: 5px;
 
         }
       }
@@ -275,6 +274,28 @@ $breakpoints: (phone: 640px,
         
           }
         }
+      }
+    }
+    .sidebar-collapse
+    { 
+      .main-header{
+         .logo {
+            width: 60px;
+            text-align: center;
+            .logo-mini {
+              display: block;
+              margin-left: -15px;
+              margin-right: -15px;
+              font-size: 18px;
+            }
+            .logo-lg{
+              display: none;
+            }
+         }
+         .navbar {
+              margin-right: 50px;
+              margin-left: auto;
+          }
       }
     }
     
