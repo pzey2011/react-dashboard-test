@@ -1,23 +1,25 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React,{useState} from 'react';
+import { Navbar } from '../Components/Navbar/Navbar';
+import { Sidebar } from '../Components/Sidebar/Sidebar';
 import '../Assets/Styles/Views/App.css';
+import HeaderContainer from '../Components/HeaderContainer/HeaderContainer';
+interface PropsType {
+    lang: string
+}
+function App(props:PropsType) {
+    const [collapsed,toggle] = useState(false);
+    const toggleCollapse = ()=>{
+        toggle(!collapsed)
+    }
+    
 
-function App() {
   return (
+            <HeaderContainer collapsed={collapsed} lang={props.lang}>
 
-          <div>
+                <Navbar toggleCollapse={toggleCollapse}/>
+                <Sidebar />
 
-              <div className="App">
-                  <header className="App-header">
-                      <p>Kadro Web Dashboard</p>
-
-
-                      <Link to="/book" >Book a photographer now</Link>
-
-                  </header>
-              </div>
-
-          </div>
+            </HeaderContainer>
   );
 }
 

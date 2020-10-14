@@ -17,7 +17,7 @@ ReactDOM.render(
                   <BookMain lang='fa' />
               </Route>
               <Route path="/">
-                  <App />
+                  <App lang='fa' />
               </Route>
           </Switch>
 
