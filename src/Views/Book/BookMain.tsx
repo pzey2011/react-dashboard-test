@@ -1,21 +1,53 @@
 import React, {Component} from 'react';
+import { isMobile } from "react-device-detect";
 import '../../Assets/Styles/Views/Book/BookMain.scss';
 import { Navbar } from '../../Components/Navbar/Navbar';
+import { Sidebar } from '../../Components/Sidebar/Sidebar';
 interface PropsType {
     lang: string
 }
 interface State{
-
+    collapse:boolean
 }
 export default class BookMain extends Component<PropsType, State>{
+    constructor(props:PropsType) {
+        super(props);
+
+        this.state = {
+            collapse: (!isMobile)?false:true
+        };
+    }
     render() {
+        
+        const toggleCollapse = () => {
+            this.setState({collapse:!this.state.collapse})
+        };
         let dir = "";
         if(this.props.lang=='fa')
-            dir = 'rtl';
+            dir = 'rtl ';
+        let baseHeaderClassName = "sidebar-mini ";
+        let extraHeaderClassName="";
+        let mainDivStyles:React.CSSProperties = {};
+        
+        if(isMobile)
+        {
+            extraHeaderClassName = (this.state.collapse)?'':'sidebar-open';
+        }
+           
+        else
+        {
+            if(!this.state.collapse)
+                mainDivStyles ={
+                    marginRight:'250px'
+                }
+            extraHeaderClassName = (this.state.collapse)?'sidebar-collapse':'';
+        }
+
         return (
-            <>
-                <Navbar lang='fa' />
-                <div className={"main "+dir} >
+            <div className={dir+baseHeaderClassName+extraHeaderClassName}>
+                <Navbar toggleCollapse={toggleCollapse}/>
+                <Sidebar />
+                <div className={"main "+dir} style={mainDivStyles} >
                     <div className="container">
                         <div className="wrapper field-types">
                             <h3>۱- چه نوع عکاسی می خواهید؟
@@ -63,7 +95,7 @@ export default class BookMain extends Component<PropsType, State>{
                         </div>
                     </div>
                 </div>
-            </>
+            </div>
         );
     }
 }

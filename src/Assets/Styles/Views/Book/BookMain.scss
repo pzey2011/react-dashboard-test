@@ -1,9 +1,18 @@
-
-
-  
+.sidebar-open{
+  .main{
+    -webkit-transform: translate(-250px, 0); 
+    -ms-transform: translate(-250px, 0);
+    -o-transform: translate(-250px, 0);
+    transform: translate(-250px, 0);
+    }
+  }
   .main {
     background: linear-gradient(45deg, #e7e7e7 0%, #e7e7e7 100%);
     margin-top: 65px;
+    -webkit-transition: -webkit-transform .3s ease-in-out, margin .3s ease-in-out;
+    -moz-transition: -moz-transform .3s ease-in-out, margin .3s ease-in-out;
+    -o-transition: -o-transform .3s ease-in-out, margin .3s ease-in-out;
+    transition: transform .3s ease-in-out, margin .3s ease-in-out;
     .container {
       border-radius: 5px;
       .wrapper.field-types {
@@ -14,7 +23,6 @@
 
         padding: 7px 30px 7px 30px;
         background-color: #fff;
-        
        
         h3{
             small{

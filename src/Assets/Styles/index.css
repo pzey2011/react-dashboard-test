@@ -37,21 +37,56 @@
   src: url("./../Fonts/iransans/eot/IRANSansWeb_Bold.eot");
   src: url("./../Fonts/iransans/eot/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"), url("./../Fonts/iransans/woff2/IRANSansWeb_Bold.woff2") format("woff2"), url("./../Fonts/iransans/woff/IRANSansWeb_Bold.woff") format("woff"), url("./../Fonts/iransans/ttf/IRANSansWeb_Bold.ttf") format("truetype")
 }
-
+*, ::after, ::before {
+  box-sizing: border-box;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #818a95;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
+.h1, .h2, .h3, .h4, .h5, .h6, body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito Sans', sans-serif;
+line-height: 1.5;
+text-shadow: none; 
+}
+body {
+  font-weight: 400;
+font-size: 13px;
+color: #3e5569;
+font-family: 'Nunito Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  /*color: #455a64;*/
+  font-weight: 400;
+}
+h4, .h4, h5, .h5, h6, .h6 {
+  margin-bottom: 10px;
+}
+h1 {
+line-height: 40px;
+font-size: 36px; }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+h2 {
+line-height: 36px;
+font-size: 24px; }
+
+h3 {
+line-height: 30px;
+font-size: 21px; }
+
+h4 {
+line-height: 22px;
+font-size: 18px; }
+
+h5 {
+line-height: 18px;
+font-size: 16px;
+font-weight: 400; }
+
+h6 {
+line-height: 16px;
+font-size: 14px;
+font-weight: 400; }
 a {
   color: #455a64;
 }
@@ -68,10 +103,12 @@ img {
   max-width: 100%;
   border: 0;
   vertical-align: middle;
+  border-style: none;
 }
 .center {
   text-align: center;
 }
+
 .rtl{
   text-align: right !important;
   direction: rtl;
@@ -79,7 +116,7 @@ img {
 }
 .rtl h1,h2,h3,h4,h5,h6,p{
   direction: rtl;
-
+  font-family: "iranyekan-light" !important;
 }
 .rtl ul{
   padding-right: 0px;
@@ -102,4 +139,13 @@ img {
   z-index: -1;
   border-radius: inherit;
   display: block;
+}
+.font-size-16 {
+  font-size: 1.143rem !important;
+}
+.font-weight-600 {
+  font-weight: 600 !important;
+}
+.d-block {
+  display: block !important;
 }

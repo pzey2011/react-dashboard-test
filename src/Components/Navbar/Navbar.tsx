@@ -10,19 +10,11 @@ import profileWhite from '../../Assets/Images/Components/NavBar/profile_white.pn
 import logo from '../../Assets/Images/Components/NavBar/logo.png';
 
 interface Props {
-    lang: string
+    toggleCollapse: ()=>void
 }
 export const Navbar = (props: Props) => {
-    const [collapse, toggle] = React.useState(false); 
-    
-    const toggleCollapse = () => {
-        toggle(!collapse);
-    };
-    let dir = "";
-    if(props.lang=='fa')
-        dir = 'rtl';
     return (
-        <div className={dir+' '+((collapse)?'sidebar-collapse':'')}>
+        
             <header className="main-header">
                 <a href="https://www.kadro.co" className="logo d-none d-md-block" >
                     {/*<!-- logo-->*/}
@@ -35,7 +27,7 @@ export const Navbar = (props: Props) => {
                 </a>
                 <nav className="navbar">
                     <div className="menu-button">
-                        <a id="scroll-to-top" className="sidebar-toggle" data-toggle="push-menu" role="button" onClick={toggleCollapse}>
+                        <a id="scroll-to-top" className="sidebar-toggle" data-toggle="push-menu" role="button" onClick={props.toggleCollapse}>
                             <FontAwesomeIcon
                                 icon={ faBars}
                                 fixedWidth
@@ -123,6 +115,6 @@ export const Navbar = (props: Props) => {
                     </div>
                 </nav>
             </header>
-        </div>
+        
     )
 }
