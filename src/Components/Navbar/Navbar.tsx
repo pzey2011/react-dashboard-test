@@ -1,18 +1,12 @@
-import React from 'react'
-import '../../Assets/Styles/Components/NavBar/NavBar.scss';
+import React from 'react';
+import '../../Assets/Styles/Components/Navbar/Navbar.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt , faBars , faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import PersonIcon from '@material-ui/icons/Person';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import RefreshIcon from '@material-ui/icons/Refresh';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import TuneIcon from '@material-ui/icons/Tune';
-import ShareIcon from '@material-ui/icons/Share';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 
 import profileWhite from '../../Assets/Images/Components/NavBar/profile_white.png';
-import profileBlack from '../../Assets/Images/Components/NavBar/profile_black.png';
 import logo from '../../Assets/Images/Components/NavBar/logo.png';
 
 interface Props {
@@ -69,11 +63,24 @@ export const Navbar = (props: Props) => {
                             </li>*/}
 
                             {/*extra*/}
-                            <li className="dropdown messages-menu">
+                            {/*
+                            <% if cart_items.any? %>
+                                <li class="dropdown messages-menu">
+                                    <a href="/cart_items_list_dashboard" class="dropdown-toggle" data-remote="true">
+                                        <i class="mdi mdi-cart-outline"></i>
+                                    </a>
+                                </li>
+                            <% else %>
+                            */}
+                            <li className="dropdown">
                                 <a href="/cart_items_list_dashboard" className="dropdown-toggle" data-remote="true">
-                                    <ShoppingCartOutlinedIcon />
+                                    <i>
+                                        <ShoppingCartOutlinedIcon />
+                                    </i>
                                 </a>
-                            </li>{/*<!-- User Account-->*/}
+                            </li>
+                            {/*<% end %>*/}
+                            {/*<!-- User Account-->*/}
                             <li className="dropdown user user-menu">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" >
                                     <span >

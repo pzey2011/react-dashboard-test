@@ -1,7 +1,10 @@
 @import '../../../../../node_modules/include-media/dist/_include-media.scss';
 $breakpoints: (phone: 640px, 
                tablet: 768px, 
-               desktop: 1024px) !default;
+               desktop: 992px) !default;
+@keyframes beat{
+  to { transform: scale(2); }
+}
 .rtl{
     .main-header{
       .logo {
@@ -23,6 +26,18 @@ $breakpoints: (phone: 640px,
         margin-left: 0;
         .navbar-custom-menu{
           .navbar-nav{
+            .dropdown.messages-menu{
+              .dropdown-toggle{
+                i{
+                  &::after{
+                    right: auto;
+                    left: 10px;
+                    
+                  }
+                }
+                
+              }
+            }
             .dropdown.user.user-menu{
               .dropdown-menu{
                 left: 5%;
@@ -166,6 +181,38 @@ $breakpoints: (phone: 640px,
                 }
               }
             }
+            .dropdown.messages-menu{
+              .dropdown-toggle{
+                i{
+                  &::after{
+                    content: '';
+                    position: absolute;
+                    top: 17px;
+                    right: 10px;
+                    display: inline-block;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 100%;
+                    background-color: #FF4961;
+                    animation: beat .25s infinite alternate;
+                    transform-origin: center;
+                  }
+                }
+                i.animated{
+                  &::after{
+                    top: 17px;
+                    right: -5px;
+                  }
+                }
+                i.fa.animated{
+                  &::after{
+                    top: -5px;
+                    right: -5px;
+                  }
+                }
+                
+              }
+            }
             .dropdown.user.user-menu{
               .dropdown-menu{
                 position: absolute;
@@ -265,15 +312,16 @@ $breakpoints: (phone: 640px,
     .d-md-block {
       display: block !important;
     }
-    .navbar{
-      .main-header {
+    .main-header {
+      .navbar{
+        
         .navbar-custom-menu{
           .navbar-nav{
             float: left;
             margin: 0;
         
           }
-        }
+        }      
       }
     }
     .sidebar-collapse
@@ -301,14 +349,22 @@ $breakpoints: (phone: 640px,
     
   }
 @include media ("<tablet") {
-  .navbar{
-    .main-header {   
-      background-color: #ffffff;
+  .rtl{
+    .main-header {  
+      .navbar{
+        margin: 0;
+      }
+    }
+  }
+  .main-header {   
+    background-color: #ffffff;
+    .navbar{
       .navbar-custom-menu{
+        float: right;
         .navbar-nav{
           
           margin-bottom: 0;
-          .dropdown.user.user-menu{
+          .dropdown-menu{
             li.divider{
               background-color: rgba(255, 255, 255, 0.1);
             }
@@ -317,7 +373,49 @@ $breakpoints: (phone: 640px,
       }
     }
   }
-  .skin-info-light .main-header .navbar .dropdown-menu li.divider {
-    background-color: rgba(255, 255, 255, 0.1);
+}
+@include media ("<desktop") {
+  .rtl{
+    .main-header { 
+      .navbar{
+        .navbar-custom-menu{
+          .navbar-nav{
+            .dropdown.messages-menu{
+              .dropdown-toggle{
+                svg{
+                  &::after{
+                    left: auto;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main-header { 
+    .navbar{
+      .navbar-custom-menu{
+        .navbar-nav{
+          float: right;
+          margin: 0;
+          .dropdown.messages-menu{
+            .dropdown-toggle{
+              i{
+                &::after{
+                  right: auto;
+                }
+              }
+            }
+          }
+          .dropdown{
+            position: static;
+            float: left;
+          }
+        }
+      }
+    }
   }
 }
